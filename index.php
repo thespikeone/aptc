@@ -49,7 +49,7 @@
 			<div class="row">
 				<h1 class="lead">Algerian platform for trading crypto</h1>
 				<p class="tagline">Aptc: trading crypto, e-commerce </p>
-				<p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">Our Shop</a></p>
+				<p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" href="shop/index.php" role="button">Our Shop</a></p>
 			</div>
 		</div>
 	</header>
