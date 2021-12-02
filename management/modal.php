@@ -1,5 +1,20 @@
 <!-- Employee select and script -->
+<?php
 
+$page_name = str_replace(dirname($_SERVER['PHP_SELF']).'/', '', $_SERVER['PHP_SELF']); 
+
+$index = "index.php";
+$emp = "employee.php";
+$todo = "todo.php";
+
+$ot = "";
+
+if($page_name != $index){
+    $ot = "../";
+}else{
+    $ot = "";
+}
+?>
 <script>  
 window.onload = function() {  
 
@@ -40,7 +55,7 @@ window.onload = function() {
         <div class="modal-body"><?php echo  $_SESSION['FIRST_NAME']; ?> are you sure do you want to logout?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <a class="btn btn-primary" href="<?php echo $ot; ?>logout.php">Logout</a>
         </div>
       </div>
     </div>

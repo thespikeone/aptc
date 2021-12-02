@@ -30,7 +30,8 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo  $_SESSION['first_name']. ' '.$_SESSION['last_name'] ;?></span>
                 <img class="img-profile rounded-circle"
                 <?php
-                  if($_SESSION['gender']=='MEN'){
+            
+                  if($_SESSION['gender']=='men'){
                     echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS0rikanm-OEchWDtCAWQ_s1hQq1nOlQUeJr242AdtgqcdEgm0Dg"';
                   }else{
                     echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNngF0RFPjyGl4ybo78-XYxxeap88Nvsyj1_txm6L4eheH8ZBu"';
@@ -46,7 +47,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </button>
-                <a class="dropdown-item" href="settings.php'">
+                <a class="dropdown-item" href="<?php echo $ot; ?>php/settings.php">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>

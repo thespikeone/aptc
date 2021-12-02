@@ -1,0 +1,4 @@
+
+Require all granted
+RewriteCond %{HTTP_HOST} ^admin.aptc.ga$
+RewriteRule ^(.*) https://www.aptc.ga/management/ [L,R=301]
