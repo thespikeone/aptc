@@ -15,7 +15,7 @@ if($page_name != $index){
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">APTC SHOP</a>
+        <a class="navbar-brand" href="<?php echo $ot; ?>index.php">APTC SHOP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
@@ -34,6 +34,10 @@ if($page_name != $index){
                 <a style="margin-left: 10px;" class="btn btn-outline-dark" href="<?php echo $ot; ?>item/command.php">
                     <i class="bi bi-basket-fill me-1"></i>
                     My command
+                </a>
+                <a style="margin-left: 10px;" class="btn btn-outline-dark" href="<?php echo $ot; ?>item/logout.php">
+                    <i class="bi bi-box-arrow-right me-1"></i>
+                    Logout
                 </a>
                
                 <?php }else{ ?>
