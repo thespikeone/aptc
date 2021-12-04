@@ -43,8 +43,10 @@ $acces = $account->fetchAll();
                 <?php foreach($acces as $ac){ ?>
                 <div class="col mb-5">
                     <div class="card h-100">
+                   
                         <!-- Product image-->
                         <img class="card-img-top" src="public/accimg/<?= $ac['path'] ?>" alt="..." />
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?= $ac['badge'] ?></div>
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">

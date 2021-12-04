@@ -7,7 +7,7 @@
 $index = "index.php";
 $emp = "employee.php";
 $todo = "todo.php";
-
+$ashop = "acc_shop.php";
 $ot = "";
 
 if($page_name != $index){
@@ -108,6 +108,12 @@ if($page_name != $index){
         <a class="nav-link" href="<?php echo $ot; ?>pages/employee.php">
           <i class="fas fa-fw fa-user"></i>
           <span>Employee</span></a>
+      </li>
+
+      <li class="nav-item <?php if($page_name == $ashop){ echo "active"; } ?>">
+        <a class="nav-link" href="<?php echo $ot; ?>pages/acc_shop.php">
+        <i class="fas fa-money-check"></i>
+          <span>ACC-Shop</span></a>
       </li>
       
  

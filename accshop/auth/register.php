@@ -128,8 +128,8 @@ $erreur="";
 										<input name="phone" type="text" class="form-control" required>
 									</div>
 									<div class="col-sm-6">
-										<label>Social media name <span class="text-danger">*</span></label>
-										<input name="social" type="text" class="form-control" required>
+										<label>Social media url <span class="text-danger">*</span></label>
+										<input name="social" type="url" class="form-control" required>
 									</div>
 								</div>
 								<div class="row top-margin">

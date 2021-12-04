@@ -190,8 +190,8 @@ if(isset($_POST['confirme'])){
                             if(count($acces2)== 0){
 
                             }else{
-                                $tot = $pdo->prepare("SELECT SUM(price) FROM aptc_shop_cart where confirme = 1 ");
-                                $tot->execute();
+                                $tot = $pdo->prepare("SELECT SUM(price) FROM aptc_shop_cart where login=? and confirme = 1 ");
+                                $tot->execute(array($_SESSION['login']));
                                 $total = $tot->fetchColumn();
 
                             echo $total; }  ?></strong></h3>
