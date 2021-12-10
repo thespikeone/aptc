@@ -148,8 +148,8 @@ $erreur="";
 								<div class="row">
 									<div class="col-lg-8">
 										<label class="checkbox">
-											<input type="checkbox"> 
-											I've read the <a href="page_terms.html">Terms and Conditions</a>
+											<input type="checkbox" required> 
+											I've read the <a href="../../privacy.php">Terms and Conditions</a>
 										</label>                        
 									</div>
 									<div class="col-lg-4 text-right">

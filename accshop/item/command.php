@@ -4,7 +4,7 @@ include_once('../public/php/data.php');
 $account2 = $pdo->prepare("SELECT * FROM aptc_shop_cart where confirme = 0 ");
 $account2->execute();
 $acces2 = $account2->fetchAll();
-$account4 = $pdo->prepare("SELECT * FROM aptc_shop_cart where confirme = 1 ");
+$account4 = $pdo->prepare("SELECT * FROM aptc_shop_cart where confirme = 1 ORDER BY date DESC ");
 $account4->execute();
 $acces4 = $account4->fetchAll();
 if($_SESSION["autoriser"]!='oui'){
@@ -148,7 +148,7 @@ if(isset($_POST['confirme'])){
                                     $account3 = $pdo->prepare("SELECT * FROM account where id=? ");
                                     $account3->execute(array($ac['account_id']));
                                     $acces3 = $account3->fetchAll();
-                                    $total = 0;
+                                    $total2 = 0;
                                 
                                     ?> src="../public/accimg/<?php  echo $acces3['0']['path'] ?>"
                                             style="width: 72px; height: 72px;"> </a>
@@ -192,9 +192,9 @@ if(isset($_POST['confirme'])){
                             }else{
                                 $tot = $pdo->prepare("SELECT SUM(price) FROM aptc_shop_cart where login=? and confirme = 1 ");
                                 $tot->execute(array($_SESSION['login']));
-                                $total = $tot->fetchColumn();
+                                $total2 = $tot->fetchColumn();
 
-                            echo $total; }  ?></strong></h3>
+                            echo $total2; }  ?></strong></h3>
                             </td>
                         </tr>
                         <tr>
