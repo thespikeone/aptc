@@ -214,6 +214,9 @@ if(isset($_POST['confirme'])){
             </div>
         </div>
     </div>
+    <footer>
+    <p class="m-0 text-center text-white"> <a href="../../privacy.php">Terms and Conditions</a></p>
+    </footer>
 </body>
 
 </html>

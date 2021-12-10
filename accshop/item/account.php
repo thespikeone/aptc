@@ -116,7 +116,9 @@ if(isset($_POST['update'])){
         </div>
     </div>
     </div>
-
+<footer>
+<p class="m-0 text-center text-white"> <a href="../../privacy.php">Terms and Conditions</a></p>
+</footer>
     <style type="text/css">
     .account-settings .user-profile {
         margin: 0 0 1rem 0;
