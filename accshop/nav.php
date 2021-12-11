@@ -3,7 +3,7 @@
 $page_name = str_replace(dirname($_SERVER['PHP_SELF']).'/', '', $_SERVER['PHP_SELF']); 
 
 $index = "index.php";
-
+$support = "ticket.php";
 
 $ot = "";
 
@@ -21,8 +21,9 @@ if($page_name != $index){
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php echo $ot; ?>index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($index == $page_name){ echo "active"; }else{ }; ?>" aria-current="page" href="<?php echo $ot; ?>index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($support == $page_name){ echo "active"; }else{ }; ?> " href="<?php echo $ot; ?>ticket/ticket.php">Support</a></li>
 
             </ul>
             <form class="d-flex">

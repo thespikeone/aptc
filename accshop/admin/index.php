@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['confirme']!= "yes"){
     header('location: loginadmin.php');
 }
+require_once('../public/php/data.php');
 
 $api_url = 'http://127.0.0.34/money/MoneyPROJECTFINAL/accshop/api/numuser/1';
 $get_user_number = json_decode(file_get_contents($api_url), true);
@@ -79,23 +80,14 @@ $numuser = $get_user_number[0]['COUNT(*)'];
 								</div>
 							</div>
 						</div>
+                        <?php require_once('ticket/support.php') ?>
 					</div>
-
+                    
 
 
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-
-                    </nav>
-                    <div class="copyright ml-auto">
-                        2021, made with <i class="fa fa-heart heart text-danger"></i> by <a
-                            href="https://www.younes-sarni.ga">TheSpikeOne</a>
-                    </div>
-                </div>
-            </footer>
+            
         </div>
 
 
