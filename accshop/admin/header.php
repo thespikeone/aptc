@@ -1,5 +1,22 @@
 	<!-- Fonts and icons -->
-	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<?php
+
+$page_name = str_replace(dirname($_SERVER['PHP_SELF']).'/', '', $_SERVER['PHP_SELF']); 
+
+$index = "index.php";
+$support = "ticket.php";
+$view = "view.php";
+
+$ot = "";
+
+if($page_name != $index){
+    $ot = "../";
+}else{
+    $ot = "";
+}
+?>
+
+	<script src="<?php echo $ot; ?>assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 WebFont.load({
     google: {
@@ -9,7 +26,7 @@ WebFont.load({
         "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands",
             "simple-line-icons"
         ],
-        urls: ['assets/css/fonts.min.css']
+        urls: ['<?php echo $ot; ?>assets/css/fonts.min.css']
     },
     active: function() {
         sessionStorage.fonts = true;
@@ -20,15 +37,15 @@ WebFont.load({
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="<?php echo $ot; ?>assets/css/atlantis.min.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 
 	<!-- Logo Header -->
 	<div class="logo-header" data-background-color="dark2">
 
-	    <a href="index.html" class="logo">
-	        <img src="assets/img/logo.png" alt="navbar brand" class="navbar-brand">
+	    <a href="<?php echo $ot; ?>index.php" class="logo">
+	        <img src="<?php echo $ot; ?>assets/img/logo.png" alt="navbar brand" class="navbar-brand">
 	    </a>
 	    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse"
 	        aria-expanded="false" aria-label="Toggle navigation">
@@ -91,18 +108,18 @@ WebFont.load({
 	            <li class="nav-item dropdown hidden-caret">
 	                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 	                    <div class="avatar-sm">
-	                        <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+	                        <img src="<?php echo $ot; ?>assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 	                    </div>
 	                </a>
 	                <ul class="dropdown-menu dropdown-user animated fadeIn">
 	                    <div class="dropdown-user-scroll scrollbar-outer">
 	                        <li>
 	                            <div class="user-box">
-	                                <div class="avatar-lg"><img src="assets/img/profile.jpg" alt="image profile"
+	                                <div class="avatar-lg"><img src="<?php echo $ot; ?>assets/img/profile.jpg" alt="image profile"
 	                                        class="avatar-img rounded"></div>
 	                                <div class="u-text">
 	                                    <h4><?php echo $_SESSION['username'] ?></h4>
-	                                    <p class="text-muted"><?php echo $_SESSION['login'] ?></p><a href="session/profile.php?number=<?php echo $_SESSION['number'] ?>"
+	                                    <p class="text-muted"><?php echo $_SESSION['login'] ?></p><a href="<?php echo $ot; ?>session/profile.php?number=<?php echo $_SESSION['number'] ?>"
 	                                        class="btn btn-xs btn-secondary btn-sm">View Profile</a>
 	                                </div>
 	                            </div>
@@ -115,7 +132,7 @@ WebFont.load({
 	                            <div class="dropdown-divider"></div>
 	                            <a class="dropdown-item" href="#">Account Setting</a>
 	                            <div class="dropdown-divider"></div>
-	                            <a class="dropdown-item" href="logout.php">Logout</a>
+	                            <a class="dropdown-item" href="<?php echo $ot; ?>logout.php">Logout</a>
 	                        </li>
 	                    </div>
 	                </ul>
@@ -125,43 +142,43 @@ WebFont.load({
 	</nav>
 	<!-- End Navbar -->
 	<!--   Core JS Files   -->
-	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="assets/js/core/popper.min.js"></script>
-	<script src="assets/js/core/bootstrap.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/core/popper.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/core/bootstrap.min.js"></script>
 
 	<!-- jQuery UI -->
-	<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 	<!-- jQuery Scrollbar -->
-	<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 
 	<!-- Chart JS -->
-	<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/chart.js/chart.min.js"></script>
 
 	<!-- jQuery Sparkline -->
-	<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 	<!-- Chart Circle -->
-	<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/chart-circle/circles.min.js"></script>
 
 	<!-- Datatables -->
-	<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/datatables/datatables.min.js"></script>
 
 	<!-- Bootstrap Notify -->
-	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
 	<!-- jQuery Vector Maps -->
-	<script src="assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
-	<script src="assets/js/atlantis.min.js"></script>
-	<script src="assets/js/demo.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/atlantis.min.js"></script>
+	<script src="<?php echo $ot; ?>assets/js/demo.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script>

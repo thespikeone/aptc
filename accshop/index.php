@@ -43,10 +43,11 @@ $acces = $account->fetchAll();
                 <?php foreach($acces as $ac){ ?>
                 <div class="col mb-5">
                     <div class="card h-100">
-                   
+
                         <!-- Product image-->
                         <img class="card-img-top" src="public/accimg/<?= $ac['path'] ?>" alt="..." />
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?= $ac['badge'] ?></div>
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                            <?= $ac['badge'] ?></div>
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -66,14 +67,15 @@ $acces = $account->fetchAll();
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item/item.php?id=<?= $ac['id'] ?>">Add to cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                    href="item/item.php?id=<?= $ac['id'] ?>">Add to cart</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php } ?>
 
-                
+
 
 
 
@@ -85,16 +87,15 @@ $acces = $account->fetchAll();
     </section>
     <!-- Footer-->
     <style>
-        
-.bg-black {
-  --bs-bg-opacity: 1;
+    .bg-black {
+        --bs-bg-opacity: 1;
 
-  background-image: url("assets/bg_header.jpg")!important;
-}
+        background-image: url("assets/bg_header.jpg") !important;
+    }
     </style>
     <footer class="py-5 bg-dark">
         <div class="container">
-        
+
             <p class="m-0 text-center text-white">Copyright &copy; APTC Shop 2021</p>
             <p class="m-0 text-center text-white"> <a href="../privacy.php">Terms and Conditions</a></p>
         </div>

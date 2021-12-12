@@ -108,7 +108,7 @@ if($_SESSION["autoriser"]!='oui'){
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+            <p class="m-0 text-center text-white">Copyright &copy; APTC 2021</p>
             <p class="m-0 text-center text-white"> <a href="../../privacy.php">Terms and Conditions</a></p>
         </div>
     </footer>

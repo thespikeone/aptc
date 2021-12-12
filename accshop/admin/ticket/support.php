@@ -31,7 +31,7 @@ $tickets = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="card-body">
             <?php foreach ($tickets as $ticket): ?>
-            <a style="text-decoration: none;" href="view.php?id=<?=$ticket['id']?>">
+            <a style="text-decoration: none;" href="ticket/view.php?id=<?=$ticket['id']?>">
                 <div class="d-flex">
                     <!--class="avatar avatar-online" // class="avatar avatar-offline"  //  class="avatar avatar-away"-->
                     <div class="avatar avatar-online">

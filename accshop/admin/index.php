@@ -5,9 +5,9 @@ if($_SESSION['confirme']!= "yes"){
 }
 require_once('../public/php/data.php');
 
-$api_url = 'http://127.0.0.34/money/MoneyPROJECTFINAL/accshop/api/numuser/1';
-$get_user_number = json_decode(file_get_contents($api_url), true);
-$numuser = $get_user_number[0]['COUNT(*)'];
+#$api_url = 'http://127.0.0.34/money/MoneyPROJECTFINAL/accshop/api/numuser/1';
+#$get_user_number = json_decode(file_get_contents($api_url), true);
+#$numuser = $get_user_number[0]['COUNT(*)'];
 
 
 ?>
@@ -48,7 +48,7 @@ $numuser = $get_user_number[0]['COUNT(*)'];
 							<div class="card card-dark bg-primary-gradient">
 								<div class="card-body pb-0">
 									<div class="h1 fw-bold float-right"></div>
-									<h2 class="mb-2"><?php echo $numuser ?></h2>
+									<h2 class="mb-2"><?php echo "4"; #echo $numuser ?></h2>
 									<p>Users account shop</p>
 									<div class="pull-in sparkline-fix chart-as-background">
 										<div id="lineChart"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
@@ -80,6 +80,8 @@ $numuser = $get_user_number[0]['COUNT(*)'];
 								</div>
 							</div>
 						</div>
+                     
+
                         <?php require_once('ticket/support.php') ?>
 					</div>
                     
@@ -91,12 +93,12 @@ $numuser = $get_user_number[0]['COUNT(*)'];
         </div>
 
 
-        <!-- End Custom template -->
+        <!-- var foo = <?php #echo $numuser; ?>; End Custom template -->
     </div>
 
     <script>
-		var foo = <?php echo $numuser; ?>;
-        $('#lineChart').sparkline([0, foo], {
+		
+        $('#lineChart').sparkline([0, 4], {
         type: 'line',
         height: '70',
         width: '100%',

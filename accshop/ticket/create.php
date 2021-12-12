@@ -24,26 +24,34 @@ if (isset($_POST['title'], $_POST['msg'])) {
     }
 }
 ?>
-  <head>
-            <meta charset="utf-8">
-            <link rel="icon" type="image/x-icon" href="../public/assets/aptc-gold.png" />
-    <!-- Bootstrap icons-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>APTC - create ticket</title>
+    <link rel="icon" type="image/x-icon" href="../public/assets/aptc-gold.png" />
+
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../public/css/styles.css" rel="stylesheet" />
-            <link href="style.css" rel="stylesheet" type="text/css">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-        </head>
+</head>
 <?php include('../nav.php'); ?>
 
 <div class="content create">
-	<h2>Create Ticket</h2>
-    
+    <h2>Create Ticket</h2>
+
     <form action="create.php" method="post">
         <label for="title">Title</label>
         <input type="text" name="title" placeholder="Title" id="title" required>
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="<?php echo $_SESSION['login']; ?>" value="<?php echo $_SESSION['login']; ?>" id="email"  disabled required>
+        <input type="email" name="email" placeholder="<?php echo $_SESSION['login']; ?>"
+            value="<?php echo $_SESSION['login']; ?>" id="email" disabled required>
         <label for="msg">Message</label>
         <textarea name="msg" placeholder="Enter your message here..." id="msg" required></textarea>
         <input type="submit" value="Create">
@@ -52,8 +60,14 @@ if (isset($_POST['title'], $_POST['msg'])) {
     <p><?=$msg?></p>
     <?php endif; ?>
 </div>
- <!-- Bootstrap core JS-->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="../public/js/scripts.js"></script>
+<footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; APTC 2021</p>
+            <p class="m-0 text-center text-white"> <a href="../../privacy.php">Terms and Conditions</a></p>
+        </div>
+    </footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="../public/js/scripts.js"></script>
 <?=template_footer()?>

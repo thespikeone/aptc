@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                    <img src="<?php echo $ot; ?>assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -38,16 +38,22 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item active">
-                    
-                    <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+
+                <li class="nav-item <?php if($index == $page_name){ echo "active";} ?>">
+                    <a href="<?php echo $ot; ?>index.php">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
-                        
                     </a>
                 </li>
+                <li class="nav-item <?php if($view == $page_name){ echo "active";} ?>">
+                    <a href="<?php echo $ot; ?>ticket/ticket.php">
+                        <i class="fas fa-eye"></i>
+                        <p>Ticket-view</p>
+                    </a>
+                </li>
+             
                 <li class="nav-item">
-                <a href="widgets.html">
+                    <a href="widgets.html">
                         <i class="fas fa-desktop"></i>
                         <p>Widgets</p>
                         <span class="caret"></span>
