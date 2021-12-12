@@ -20,6 +20,7 @@ if($data == "admin.aptc.ga"){
 	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
+	<?php include_once('google.php'); ?>
 </head>
 
 <body class="home">

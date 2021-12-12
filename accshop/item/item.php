@@ -29,6 +29,7 @@ if($_SESSION["autoriser"]!='oui'){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../public/css/styles.css" rel="stylesheet" />
+    <?php include_once('../../google.php'); ?>
 </head>
 
 <body>

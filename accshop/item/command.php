@@ -36,6 +36,7 @@ if(isset($_POST['confirme'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../public/js/scripts.js"></script>
+    <?php include_once('../../google.php'); ?>
 </head>
 
 <body>
@@ -95,7 +96,7 @@ if(isset($_POST['confirme'])){
 
                         <tr>
                             <td>   </td>
-                            <td>   </td>
+                            <td>   </td>
 
                             <td>
                                 <h3>Total</h3>

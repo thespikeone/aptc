@@ -58,7 +58,7 @@ include_once('../public/php/data.php');
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
 
-
+    <?php include_once('../../google.php'); ?>
 </head>
 
 <body>

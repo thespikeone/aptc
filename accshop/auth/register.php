@@ -77,6 +77,7 @@ $erreur="";
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+	<?php include_once('../../google.php'); ?>
 </head>
 
 <body>

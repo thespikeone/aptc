@@ -18,6 +18,7 @@
     <!-- Custom styles for our template -->
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <?php include_once('google.php'); ?>
 </head>
 
 <body class="home">
@@ -101,6 +102,83 @@
                                     version of these Terms and Conditions of Use.</li>
                             </ul>
                         </ul>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>4-Collection and processing of personal data</strong>.</li>
+                            <ul class="list-bullets">
+                                <li class="mb-2">The term 'personal data' refers to such information which, directly or
+                                    indirectly, may refer to you as an individual. Examples of such data are name,
+                                    personal ID number, contact details,
+                                    behavior or IP address. Personal data processing refers to any action that we or a
+                                    third party that we have engaged take with the personal data, such as collection,
+                                    registration and storage.
+                                </li>
+                                <li class="mb-2">
+                                    Personal data may only be processed for specified and explicitly stated purposes and
+                                    may not be subsequently processed for any purpose that goes beyond these purposes.
+                                </li>
+                                <li class="mb-2">
+                                    Your personal data may also be used for marketing and follow up as well as for our
+                                    sales and product development with the aim of improving our products and services.
+                                    In the event that you do not wish to receive marketing and/or any offers, please
+                                    contact us via the contact details.
+                                </li>
+                                <li class="mb-2">
+                                    Finally, personal data is also processed for statistical purposes to see how users
+                                    use the website and to analyze search behavior, as well as to display content
+                                    customized for you. Such data is, however, only processed in aggregated form or in a
+                                    form that cannot identify you as an individual. Data is also processed indirectly in
+                                    connection with the development, testing and administration of the IT systems
+                                    underlying our website.
+                                </li>
+                                <li class="mb-2">
+                                    When using features on our website that allow you to post information or other
+                                    material on it, please note that such information may also contain personal data. In
+                                    the event that your information contains data about other individuals, you may only
+                                    post such data which you have received their consent to provide.
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>5-Legal basis for processing and storage period</strong>.</li>
+                                <ul class="list-bullets">
+                                    <li class="mb-2">APTC, processes your personal data when necessary for the
+                                        performance of an agreement with you and when we have another legitimate and
+                                        justifiable interest in processing your personal data, such as an interest in
+                                        marketing ourselves to visitors to our website or an interest in developing our
+                                        website or our products and/or services. If we were to process your personal
+                                        data for any purpose which, according to applicable legislation, requires your
+                                        consent, we will obtain your consent before commencing with such processing.
+                                    </li>
+                                    <li class="mb-2">
+                                        the data can also be deleted when you close your account.
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>6-Security for the protection of personal data</strong>.</li>
+                                <ul class="list-bullets">
+                                    <li class="mb-2">APTC, safeguards your personal data with a high level of
+                                        security and has to this end taken appropriate technical and organizational
+                                        security measures to protect your personal data from unauthorised access,
+                                        amendment, dissemination or destruction.
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>7-Payment</strong>.</li>
+                                <ul class="list-bullets">
+                                    <li class="mb-2">APTC, your payment is now made using phone recharge payment to
+                                        facilitate transactions between the customer and.
+                                    </li>
+                                    <li class="mb-2">
+                                        we can refund you after the account doesn't work within 3 days from then on
+                                        there will be no refund possible
+                                    </li>
+                                    <li class="mb-2">
+                                        for the refund we give you the same account, there is no refund of money or
+                                        another account in our category
+                                    </li>
+                                </ul>
+                            </ul>
                     </div>
                 </div>
 
