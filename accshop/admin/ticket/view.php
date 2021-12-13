@@ -44,11 +44,9 @@ if (isset($_POST['msg']) && !empty($_POST['msg'])) {
     header('Location: view.php?id=' . $_GET['id']);
     exit;
 }
-$stmt = $pdo->prepare('SELECT * FROM tickets_comments WHERE ticket_id = ? ORDER BY created ASC');
-$stmt->execute([ $_GET['id'] ]);
-$comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +55,9 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>APTC - Admin Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="../assets/img/icon.png" type="image/x-icon" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -89,50 +89,26 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <h4 class="card-title"><?=htmlspecialchars($ticket['title'], ENT_QUOTES)?> <span
                                             class="<?=$ticket['status']?>"> (<?=$ticket['status']?>)</span> <span>From:
                                             <?=$ticket['email']?></span> </h4>
-                           
-                                    <a href="view.php?id=<?=$_GET['id']?>&status=closed" class="btn btn-danger col-sm-6 col-md-3">Close</a>
-                                    <a href="view.php?id=<?=$_GET['id']?>&status=resolved" class="btn btn-warning col-sm-6 col-md-3">Resolve</a>
-                                    <a href="view.php?id=<?=$_GET['id']?>&status=open" class="btn btn-success col-sm-6 col-md-3">Open</a>
-                              
-                               </div>
+
+                                    <a href="view.php?id=<?=$_GET['id']?>&status=closed"
+                                        class="btn btn-danger col-sm-6 col-md-3">Close</a>
+                                    <a href="view.php?id=<?=$_GET['id']?>&status=resolved"
+                                        class="btn btn-warning col-sm-6 col-md-3">Resolve</a>
+                                    <a href="view.php?id=<?=$_GET['id']?>&status=open"
+                                        class="btn btn-success col-sm-6 col-md-3">Open</a>
+
+                                </div>
                                 <div class="card-body">
 
 
-                                    <?php foreach($comments as $comment): ?>
-                                    <div class="tab-pane fade active show" id="pills-profile-nobd" role="tabpanel"
-                                        aria-labelledby="pills-profile-tab-nobd">
-                                        <?php if($comment['frome'] == "staff"){  
-                                            ?>
-                                        <p class="col-md-4 text-info">
+                                <div id="message"></div>
 
-
-                                            <strong><span><?=date('F dS, G:ia', strtotime($comment['created']))?></span></strong>
-                                            <br>
-                                            <strong class="text-success"> staff:</strong>
-                                            <?=nl2br(htmlspecialchars($comment['msg'], ENT_QUOTES))?>
-                                        </p>
-
-                                        <?php
-                                    }else{
-
-                                    ?>
-                                        <p class="col-md-4 text-primary">
-                                            <strong>
-                                                <span><?=date('F dS, G:ia', strtotime($comment['created']))?></span></strong>
-                                            <br>
-                                            <strong class="text-warning">Client:</strong>
-                                            <?=nl2br(htmlspecialchars($comment['msg'], ENT_QUOTES))?>
-                                        </p>
-                                        <?php 
-
-                                  } ?>
-                                    </div>
-                                    <?php endforeach; ?>
 
                                     <?php if($ticket['status'] == "open"){
           
                                      ?>
                                     <form action="" method="post">
+                                    
                                         <textarea name="msg" class="form-control" placeholder="Enter your comment..."
                                             id="comment"></textarea>
                                         <button type="submit" value="Post Comment" class="btn btn-secondary">
@@ -141,7 +117,7 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             </span>
                                             Post Comment
                                         </button>
-                                    
+
                                     </form>
                                     <?php
                                     }else {
@@ -209,11 +185,19 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         color: #b63838;
     }
 
-    .resolved{
-       color: #ffad46!important;
+    .resolved {
+        color: #ffad46 !important;
     }
-
     </style>
+
+    <script>
+    setInterval('load_view()', 500);
+
+    function load_view() {
+        $('#message').load('load_view.php?id=<?php echo $_GET['id']  ?>');
+    }
+    </script>
 </body>
+
 
 </html>

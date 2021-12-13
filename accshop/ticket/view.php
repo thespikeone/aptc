@@ -50,7 +50,9 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../public/css/styles.css" rel="stylesheet" />
@@ -89,30 +91,16 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="comments">
-        <?php foreach($comments as $comment): ?>
-        <div class="comment">
-            <div>
-                <i class="fas fa-comment fa-2x"></i>
-            </div>
+       
 
-            <p>
+       
 
-                <?php if($comment['frome'] == "client"){
-            ?>
-                <span><?=date('F dS, G:ia', strtotime($comment['created']))?></span>
-                <strong>you:</strong> <?=nl2br(htmlspecialchars($comment['msg'], ENT_QUOTES))?>
-                <?php
-        }else{
-
-        ?>
-                <span><?=date('F dS, G:ia', strtotime($comment['created']))?></span>
-                <strong> staff:</strong> <?=nl2br(htmlspecialchars($comment['msg'], ENT_QUOTES))?>
-                <?php 
-
-        } ?>
-            </p>
-        </div>
-        <?php endforeach; ?>
+          
+            <div id="message"></div>
+           
+        
+      
+     
         <?php if($ticket['status'] == "open"){
           
         ?>
@@ -138,6 +126,13 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p class="m-0 text-center text-white"> <a href="../../privacy.php">Terms and Conditions</a></p>
     </div>
 </footer>
+<script>
+setInterval('load_view()', 200);
+
+function load_view() {
+    $('#message').load('load_view.php?id=<?php echo $_GET['id']  ?>');
+}
+</script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
