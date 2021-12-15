@@ -8,6 +8,8 @@ if($data == "admin.aptc.ga"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2673693298818397"
+     crossorigin="anonymous"></script>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -85,7 +87,7 @@ if($data == "admin.aptc.ga"){
 					</p>	
 				</div>
 			</div>
-
+h
 			<div class="col-md-3 widget">
 				<h3 class="widget-title">Follow us</h3>
 				<div class="widget-body">

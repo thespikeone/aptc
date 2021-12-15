@@ -4,6 +4,7 @@
             window.location = "index.php";
           </script>
     <?php
+    
     } ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -101,17 +101,36 @@ if (isset($_POST['msg']) && !empty($_POST['msg'])) {
                                 <div class="card-body">
 
 
-                                <div id="message"></div>
+                                    <div id="message"></div>
 
+                                    <script>
+                                    function sendData() {
+                                        var msg = document.getElementById("msg").value;
+                                      
+                                        $.ajax({
+                                            type: 'post',
+                                            url: 'msg.php?id=<?php echo $_GET['id']  ?>',
+                                            data: {
+                                                msg: msg
+                                            },
+                                            success: function(response) {
+                                                $('textarea[name="msg"]').val('');
+                                                $('#res').html("Vos données seront sauvegardées");
+                                            }
+                                        });
 
+                                        return false;
+                                    }
+                                    </script>
                                     <?php if($ticket['status'] == "open"){
           
                                      ?>
-                                    <form action="" method="post">
-                                    
-                                        <textarea name="msg" class="form-control" placeholder="Enter your comment..."
-                                            id="comment"></textarea>
-                                        <button type="submit" value="Post Comment" class="btn btn-secondary">
+                                    <form action="" method="POST" onsubmit="return sendData();">
+
+                                        <textarea name="msg" id="msg" class="form-control"
+                                            placeholder="Enter your comment..." id="comment"></textarea>
+                                        <button type="submit" name="submit_form" value="Post Comment"
+                                            class="btn btn-secondary">
                                             <span class="btn-label">
                                                 <i class="fa fa-plus"></i>
                                             </span>
