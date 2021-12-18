@@ -1,11 +1,16 @@
 	<!-- Fonts and icons -->
 	<?php
-
+$stmt = $pdo->prepare('SELECT * FROM aptc_notif_client ORDER BY date DESC');
+$stmt->execute();
+$notif2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$notif2_count = count($notif2);
 $page_name = str_replace(dirname($_SERVER['PHP_SELF']).'/', '', $_SERVER['PHP_SELF']); 
 
+$notif3 = "all_notif.php";
 $index = "index.php";
 $support = "ticket.php";
-$view = "view.php";
+$view = "ticket.php";
+
 
 $ot = "";
 
@@ -95,7 +100,7 @@ WebFont.load({
 	                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown"
 	                    aria-haspopup="true" aria-expanded="false">
 	                    <i class="fa fa-bell"></i>
-	                    <span class="notification">4</span>
+	                    <span class="notification"><?= $notif2_count ?></span>
 	                </a>
 	                <?php require_once('notif.php') ?>
 	            </li>

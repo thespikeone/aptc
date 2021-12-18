@@ -37,6 +37,7 @@
                     </div>
                 </div>
             </div>
+
             <ul class="nav nav-primary">
 
                 <li class="nav-item <?php if($index == $page_name){ echo "active";} ?>">
@@ -51,7 +52,7 @@
                         <p>Ticket-view</p>
                     </a>
                 </li>
-             
+
                 <li class="nav-item">
                     <a href="widgets.html">
                         <i class="fas fa-desktop"></i>
@@ -67,7 +68,33 @@
                     </span>
                     <h4 class="text-section">User General</h4>
                 </li>
-
+                <li class="nav-item <?php if($notif3 == $page_name){ echo "active";} ?>">
+                    <a data-toggle="collapse" href="#base">
+                    <i class="fas fa-bell"></i>
+                        <p>Notification</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="base">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="<?php echo $ot; ?>notif/all_notif.php">
+                                    <span class="sub-item">All Notification</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="components/flaticons.html">
+                                    <span class="sub-item">Flaticons</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="components/typography.html">
+                                    <span class="sub-item">Typography</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
             </ul>
         </div>

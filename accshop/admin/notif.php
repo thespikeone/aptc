@@ -1,19 +1,33 @@
+<?php
+$stmt = $pdo->prepare('SELECT * FROM aptc_notif_client ORDER BY date DESC');
+$stmt->execute();
+$notif = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$notif_count = count($notif);
+
+?>
+
 <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
     <li>
-        <div class="dropdown-title">You have 4 new notification</div>
+        <div class="dropdown-title">You have <?= $notif_count ?> new notification</div>
     </li>
     <li>
         <div class="notif-scroll scrollbar-outer">
             <div class="notif-center">
-                <a href="#">
-                    <div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
+                <?php foreach($notif as $nt){ 
+                ?>
+                <a href="<?= $nt['link'] ?>">
+                    <div class="notif-icon notif-<?= $nt['bg'] ?>"> <i class="<?= $nt['ico'] ?>"></i> </div>
                     <div class="notif-content">
                         <span class="block">
-                            New user registered
+                        <?= $nt['title'] ?>
                         </span>
-                        <span class="time">5 minutes ago</span>
+                        <span class="time"><?=date('F dS, G:ia', strtotime($nt['date']))?></span>
                     </div>
                 </a>
+                <?php
+
+                } ?>
+                     <!--
                 <a href="#">
                     <div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
                     <div class="notif-content">
@@ -23,9 +37,10 @@
                         <span class="time">12 minutes ago</span>
                     </div>
                 </a>
+           
                 <a href="#">
                     <div class="notif-img">
-                        <img src="<?php echo $ot; ?>assets/img/profile2.jpg" alt="Img Profile">
+                        <img src="<?php # echo $ot; ?>assets/img/profile2.jpg" alt="Img Profile">
                     </div>
                     <div class="notif-content">
                         <span class="block">
@@ -34,6 +49,7 @@
                         <span class="time">12 minutes ago</span>
                     </div>
                 </a>
+                
                 <a href="#">
                     <div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
                     <div class="notif-content">
@@ -43,6 +59,7 @@
                         <span class="time">17 minutes ago</span>
                     </div>
                 </a>
+                -->
             </div>
         </div>
     </li>

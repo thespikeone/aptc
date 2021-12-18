@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('../public/php/notification_add.php');
 include_once('../public/php/data.php');
 $account2 = $pdo->prepare("SELECT * FROM aptc_shop_cart where confirme = 0 ");
 $account2->execute();
@@ -15,6 +16,7 @@ if(isset($_POST['confirme'])){
         $id = $ac['id'];
         $cc = $pdo->prepare("UPDATE aptc_shop_cart SET confirme=1 WHERE id=$id");
         $cc->execute();
+        cmd_confirm();
         header("Refresh:0");
     }
 }

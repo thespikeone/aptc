@@ -91,21 +91,39 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="comments">
-       
 
-       
 
-          
-            <div id="message"></div>
-           
-        
-      
-     
+
+
+
+        <div id="message"></div>
+
+
+        <script>
+        function sendData() {
+            var msg = document.getElementById("msg").value;
+
+            $.ajax({
+                type: 'post',
+                url: 'msg.php?id=<?php echo $_GET['id']  ?>',
+                data: {
+                    msg: msg
+                },
+                success: function(response) {
+                    $('textarea[name="msg"]').val('');
+                    $('#res').html("Vos données seront sauvegardées");
+                }
+            });
+
+            return false;
+        }
+        </script>
+
         <?php if($ticket['status'] == "open"){
           
         ?>
-        <form action="" method="post">
-            <textarea name="msg" placeholder="Enter your comment..."></textarea>
+        <form action="" method="post" onsubmit="return sendData();">
+            <textarea name="msg" id="msg" placeholder="Enter your comment..."></textarea>
             <input type="submit" value="Post Comment">
         </form>
         <?php
@@ -127,7 +145,7 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </footer>
 <script>
-setInterval('load_view()', 200);
+setInterval('load_view()', 500);
 
 function load_view() {
     $('#message').load('load_view.php?id=<?php echo $_GET['id']  ?>');

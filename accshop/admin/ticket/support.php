@@ -4,7 +4,7 @@ $stmt->execute();
 $tickets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<div class="col-md-6">
+<div class="col-md-<?php if($view == $page_name){ echo "12";}else{ echo "6"; } ?>">
     <div class="card">
         <div class="card-header">
             <div class="card-head-row">
@@ -31,7 +31,7 @@ $tickets = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="card-body">
             <?php foreach ($tickets as $ticket): ?>
-            <a style="text-decoration: none;" href="ticket/view.php?id=<?=$ticket['id']?>">
+            <a style="text-decoration: none;" href="<?php if($view == $page_name){ echo "";}else{ echo "ticket/"; } ?>view.php?id=<?=$ticket['id']?>">
                 <div class="d-flex">
                     <!--class="avatar avatar-online" // class="avatar avatar-offline"  //  class="avatar avatar-away"-->
                     <div class="avatar avatar-online">
